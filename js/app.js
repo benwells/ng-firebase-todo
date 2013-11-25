@@ -9,7 +9,7 @@ reminders.config(['$routeProvider','$locationProvider',
         caseInsensitiveMatch: true
       }).when('/new', {
         templateUrl: '../views/new.html',
-        // controller: 'ViewRemindersCtrl',
+        controller: 'AddRemindersCtrl',
         caseInsensitiveMatch: true
       }).otherwise({redirectTo:'/'});
   }]);
