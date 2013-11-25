@@ -1,10 +1,8 @@
-reminders.factory('Data', function () {
-  return [{
-    text: 'I need to do this',
-    completed: false
-  },
-  {
-    text: 'also this',
-    completed: true
-  }];
-});
+reminders.factory('Data', ['angularFire', function (angularFire) {
+    return {
+      loadReminders: function (scope, model) {
+        var ref = new Firebase('https://todosng.firebaseio.com/todosng');
+        return angularFire(ref, scope, model, []);
+      }
+    }
+}]);
