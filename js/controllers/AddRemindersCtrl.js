@@ -1,5 +1,4 @@
-reminders.controller('AddRemindersCtrl', ['$scope', function ($scope){
-
-
+reminders.controller('AddRemindersCtrl', ['$scope', 'Data', function ($scope,Data){
+  $scope.reminders = Data;
 }]);
 
