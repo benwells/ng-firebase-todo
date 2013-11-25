@@ -1,1 +1,1 @@
-//app.js
+var reminders = angular.module('reminders', []);
