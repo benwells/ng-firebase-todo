@@ -1,3 +1,8 @@
 <div id='main' ng-contoller='AddRemindersCtrl'>
   <h2>new reminder</h2>
+  <form>
+    <input type=text ng-model='newReminder.text'/>
+    <br>
+    <a ng-click='add();'>Submit</a>
+  </form>
 </div>
