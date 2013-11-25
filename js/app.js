@@ -7,5 +7,9 @@ reminders.config(['$routeProvider','$locationProvider',
         templateUrl: '../views/list.html',
         controller: 'ViewRemindersCtrl',
         caseInsensitiveMatch: true
+      }).when('/new', {
+        templateUrl: '../views/new.html',
+        // controller: 'ViewRemindersCtrl',
+        caseInsensitiveMatch: true
       }).otherwise({redirectTo:'/'});
   }]);
