@@ -1,4 +1,4 @@
-var reminders = angular.module('reminders', ['ngRoute', "firebase"]);
+var reminders = angular.module('reminders', ['ngRoute', 'firebase']);
 
 reminders.config(['$routeProvider','$locationProvider',
   function($routeProvider, $locationProvider) {

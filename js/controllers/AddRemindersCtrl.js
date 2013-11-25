@@ -1,4 +1,4 @@
-reminders.controller('AddRemindersCtrl', ['$scope', '$location', 'Data', function ($scope, $location, Data){
+reminders.controller('AddRemindersCtrl', ['$scope', '$location', 'Data', 'angularFire', function ($scope, $location, Data, angularFire){
   $scope.reminders = Data;
   $scope.newReminder = [];
   $scope.add = function(){
