@@ -1,8 +1,17 @@
-reminders.factory('Data', ['angularFire', function (angularFire) {
+reminders.factory('Data', ['angularFireCollection',
+  function (angularFireCollection) {
+    var url = new Firebase('https://todosng.firebaseio.com/reminders');
+
     return {
-      loadReminders: function (scope, model) {
-        var ref = new Firebase('https://todosng.firebaseio.com/todosng');
-        return angularFire(ref, scope, model, []);
+      getAllReminders: function () {
+        var ref = angularFireCollection(url);
+        return ref;
+      },
+      addReminder: function (newReminder) {
+        console.log(newReminder)
+        var ref = angularFireCollection(url);
+        ref.add({text: newReminder, completed: false});
       }
     }
-}]);
+  }
+]);
