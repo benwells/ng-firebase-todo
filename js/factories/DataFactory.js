@@ -1,16 +1,14 @@
 reminders.factory('Data', ['angularFireCollection',
   function (angularFireCollection) {
     var url = new Firebase('https://todosng.firebaseio.com/reminders');
+    var ref = angularFireCollection(url);
 
     return {
       getAllReminders: function () {
-        var ref = angularFireCollection(url);
         return ref;
       },
-      addReminder: function (newReminder) {
-        console.log(newReminder)
-        var ref = angularFireCollection(url);
-        ref.add({text: newReminder, completed: false});
+      addReminder: function (newReminderText) {
+        ref.add({text: newReminderText, completed: false});
       }
     }
   }
