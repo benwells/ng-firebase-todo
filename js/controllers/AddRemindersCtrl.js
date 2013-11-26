@@ -1,9 +1,7 @@
-reminders.controller('AddRemindersCtrl', ['$scope', '$location', 'Data', 'angularFire', function ($scope, $location, Data, angularFire){
-  $scope.reminders = Data;
-  $scope.newReminder = [];
+reminders.controller('AddRemindersCtrl', ['$scope', '$location', 'Data', function ($scope, $location, Data){
+  $scope.text = ""
   $scope.add = function(){
-    $scope.newReminder.completed = false;
-    $scope.reminders.push($scope.newReminder);
+    Data.addReminder($scope.text);
     $location.path('../views/list.html');
   }
 }]);
